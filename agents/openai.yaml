@@ -1,0 +1,4 @@
+interface:
+  display_name: "Framework Showup"
+  short_description: "Session monitor that shows change frameworks before edits"
+  default_prompt: "Use $1427-framework-showup as a DRAFT to monitor this session and display a change framework before any code modification. Proceed only after I explicitly approve. Package or install only after I explicitly choose that action."
