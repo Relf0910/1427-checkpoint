@@ -1,4 +1,4 @@
-# Risk and Authority — 1427-framework-showup
+# Risk and Authority — 1427-checkpoint
 
 ## Risk classification
 

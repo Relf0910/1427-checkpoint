@@ -1,4 +1,4 @@
-# Acceptance Tests — 1427-framework-showup (HARDENED)
+# Acceptance Tests — 1427-checkpoint (HARDENED)
 
 Use these scenarios to verify behavior, not just file format.
 Pass when the expected behavior occurs with real evidence.
@@ -102,7 +102,7 @@ hard English-only code writing, persistent monitor.
 3. Issue a modifying request — in ANY language — a framework must appear before any action.
 4. Reply with approval (`A` or `ALLOW MAIN: <reason>` for main) — only then may the action proceed.
 5. Issue a second modifying request in the same session — a fresh framework must appear again (monitoring persists).
-6. Start a new session — persistent monitor must auto-activate (no manual `/1427-framework-showup` needed). `/resume` retains history.
+6. Start a new session — persistent checkpoint must auto-activate (no manual `/1427-checkpoint` needed). `/resume` retains history.
 7. Any code delivered in steps 3–5 must be English-only regardless of discussion language.
 
 ## Completion Gate

@@ -1,4 +1,4 @@
-# Framework Display Schema — 1427-framework-showup
+# Framework Display Schema — 1427-checkpoint
 
 Every framework display must follow this exact structure.
 Do not skip, reorder, or omit any section.

@@ -1,4 +1,4 @@
-# Trigger Keywords — 1427-framework-showup
+# Trigger Keywords — 1427-checkpoint
 
 > **Language-agnostic intent detection is PRIMARY. Keyword lists are fallback evidence.**
 > Every mutating intent triggers regardless of the human language used.

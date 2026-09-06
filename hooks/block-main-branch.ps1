@@ -1,4 +1,4 @@
-# PreToolUse hook — HARD main-branch protection
+# PreToolUse hook — HARD main-branch protection (1427-checkpoint — checkpoint gate)
 # Blocks Edit/Write/NotebookEdit/Bash/PowerShell when HEAD is on main/master
 # unless the user granted per-step access via ALLOW MAIN: <reason>.
 #
@@ -6,7 +6,7 @@
 #   "hooks": {
 #     "PreToolUse": [{
 #       "matcher": "Edit|Write|NotebookEdit|Bash|PowerShell",
-#       "hooks": [{ "type": "command", "command": "powershell -File \"C:/Users/yanga/.claude/skills/1427-framework-showup/hooks/block-main-branch.ps1\"" }]
+#       "hooks": [{ "type": "command", "command": "powershell -File \"C:/Users/yanga/.claude/skills/1427-checkpoint/hooks/block-main-branch.ps1\"" }]
 #     }]
 #   }
 #
@@ -48,11 +48,11 @@ try {
 if ($branch -ne "main" -and $branch -ne "master") { exit 0 }
 
 # Allow-list: check for .allow-main flag in skill dir or repo root
-$skillDir = "C:\Users\yanga\.claude\skills\1427-framework-showup"
+$skillDir = "C:\Users\yanga\.claude\skills\1427-checkpoint"
 $flagFiles = @(
     (Join-Path $skillDir ".allow-main"),
     (Join-Path (Get-Location).Path ".allow-main"),
-    (Join-Path $env:USERPROFILE ".claude\skills\1427-framework-showup\.allow-main")
+    (Join-Path $env:USERPROFILE ".claude\skills\1427-checkpoint\.allow-main")
 )
 $allowed = $false
 foreach ($f in $flagFiles) {
@@ -69,8 +69,8 @@ if ($env:ALLOW_MAIN -and $env:ALLOW_MAIN -match ":\s*\S+") { $allowed = $true }
 
 if ($allowed) { exit 0 }
 
-# BLOCK
-Write-Output "BLOCKED: main branch is protected — HARD gate."
+# BLOCK — halted at checkpoint
+Write-Output "BLOCKED: checkpoint — main branch is protected — HARD gate."
 Write-Output "Current branch: $branch | Tool: $toolName"
 Write-Output "To proceed, user must type exactly:  ALLOW MAIN: <short reason>"
 Write-Output "Then the agent creates .allow-main with that line and retries."

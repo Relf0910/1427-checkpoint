@@ -1,11 +1,11 @@
 ---
-name: 1427-framework-showup
-description: Session monitor that displays a change framework before the AI performs any action that modifies code, files, configuration, or systems, ensuring the user approves every change before it is executed. Use only when the user requests session monitoring or when an action would modify code, files, or systems. Do not use for read-only tasks such as skill explanations, general analysis without modification, or Q&A unless the user explicitly requests monitoring — the skill requires active approval authority for every change.
+name: 1427-checkpoint
+description: Session checkpoint that displays a change framework before the AI performs any action that modifies code, files, configuration, or systems, ensuring the user approves every change before it is executed. Use only when the user requests session monitoring or when an action would modify code, files, or systems. Do not use for read-only tasks such as skill explanations, general analysis without modification, or Q&A unless the user explicitly requests monitoring — the skill requires active approval authority for every change.
 ---
 
-# Framework Showup
+# Checkpoint
 
-Stop, display, and wait — make no change until the user gives explicit permission.
+Stop, display, and wait — no change passes the checkpoint without explicit permission.
 
 ## Core rule
 
@@ -20,7 +20,7 @@ display the framework first.
 The skill is invoked once at the start of a session and remains active
 for the entire session. When persistent auto-load is enabled (see
 Persistent Monitor below), the skill is also auto-activated at SessionStart
-so no manual `/1427-framework-showup` invoke is needed.
+so no manual `/1427-checkpoint` invoke is needed.
 
 1. On each user request, scan for trigger intent — language-agnostic
    (see `references/trigger-keywords.md` §0 Universal Intent Gate).
@@ -151,7 +151,7 @@ PreToolUse enforcement that makes the main-branch gate non-bypassable.
 
 ## Status
 
-HARDENED — branch `feat/hardening-multilang-mainprotect-english`.
-Main holds the original baseline. All hardening is on the feature branch.
+HARDENED — checkpoint rebrand. Branch `feat/hardening-multilang-mainprotect-english`
+holds the hardened checkpoint. Main holds the checkpoint baseline.
 Installation (hook wiring + persistent auto-load) completes on explicit
 user choice via `ALLOW MAIN` flow when touching settings.
